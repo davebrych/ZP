@@ -189,13 +189,6 @@
             color: red;
             padding-bottom: 20px;
         }
-        .container .incoming .registration{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: 70px;
-            font-size: 15px;
-        }
         .container form .Name{
             padding-bottom: 20px;
         }
@@ -258,6 +251,201 @@
       height: 30px;   
       padding: 10px;
     }
+    @media(max-width: 1440px){
+      .icon{
+        margin-left: 25%;
+      }
+    }
+    @media(max-width:1024px){
+      .icon{
+        margin-left: 50px;
+      }
+      .search{
+        max-width: 200px;
+      }
+      .container{
+        width: 60vh;
+      }
+    }
+    @media(max-width:768px){
+      .header{
+        height: 40px;
+      }
+      .h{
+        font-size: 1.2em;
+      }
+      .logo{
+        width: 40px;
+        height: 40px;
+      }
+      .text{
+        font-size: 1em;
+      }
+      .matches{
+        margin-left: 20px;
+      }
+      .dropbtn{
+        padding-top: 15px; ;
+        padding-bottom: 15px;
+      }
+      .trainings{
+        margin-left: 20px;
+      }
+      .teams{
+        margin-left: 20px;
+      }
+      .contacts{
+        margin-left: -20px;
+      }
+      .icon{
+        margin-left: 40px;
+        font-size: 1.7em;
+      }
+      .search{
+        max-width: 150px;
+        padding-right: 10px;
+      }
+      .search input{
+        width: 60%;
+        font-size: 15px;
+      }
+      .search button{
+        width: 30%;
+        font-size: 15px;
+        padding: 5px;
+      }
+      .container{
+        margin-top: 50px;
+      }
+    }
+    @media(max-width:425px){
+      .header{
+        height: 30px;
+        padding:5px;
+      }
+      .h{
+        width: 0%;
+        overflow: hidden;
+      }
+      .logo{
+        margin-left: 0px;
+        width: 30px;
+        height: 30px;
+      }
+      .text{
+        padding-left: 5px;
+        font-size: 0.8em;
+      }
+      .introduction{
+        margin-left: -15px;
+      }
+      .matches{
+        margin-left: 10px;
+        align-items: center;
+      }
+      .dropbtn{
+        padding-top: 8px; ;
+        padding-bottom: 10px;
+      }
+      .trainings{
+        margin-left: 5px;
+      }
+      .teams{
+        margin-left: 0px;
+      }
+      .contacts{
+        margin-left: -20px;
+      }
+      .icon{
+        margin-left: -60px;
+        font-size: 1.2em;
+      }
+      .search{
+        max-width: 100px;
+        padding-right: 2px;
+      }
+      .search input{
+        width: 50%;
+        height: 10px;
+      }
+      .search button{
+        width: 50%;
+        font-size: 13px;
+        padding: 0px;
+      }
+      .container{
+        margin-top: 30px;
+        width: 25vh;
+      }
+      .container form .Name input{
+        width: 20vh;
+      }
+      .container form .field input{
+        width: 20vh;
+      }
+      .footer{
+        font-size: 0.8em;
+        text-align: center;
+        padding-left: 50px;
+        padding-right: 50px;
+        height: 20px;
+      }
+    }
+    @media(max-width:375px){
+      .search{
+        max-width: 60px;
+        padding-right: 2px;
+      }
+      .search input{
+        width: 40%;
+      }
+      .search button{
+        width: 60%;
+        font-size: 13px;
+        padding: 0px;
+      }
+      .icon{
+        margin-left: -80px;
+      }
+      .container{
+        width: 23vh;
+      }
+      .container .incoming .head{
+        font-size: 1em;
+      }
+    }
+    @media(max-width:320px){
+      .header{
+        height: 30px;      
+      }
+      .logo{
+        width: 0%;
+        overflow: hidden;
+      }
+      .text{
+        font-size: 10px;
+      }
+      .icon{
+        width: 0%;
+        overflow: hidden;
+      }
+      .search{
+        max-width: 100px;
+      }
+      .container .incoming .head{
+        font-size: 0.8em;
+      }
+      .container{
+        margin-top: 30px;
+        width: 18vh;
+      }
+      .container form .Name input{
+        width: 17vh;
+      }
+      .container form .field input{
+        width: 17vh;
+      }
+    }
   </style>
 </head>
 <body>
@@ -266,7 +454,7 @@
       <img src="znak.jpg" alt="znak" class="logo">
       <p class="h">FK Rudná</p>
       <div class="text">
-        <a href="ZP - uvod.html" alt="introduction" class="introduction">Úvod</a>
+        <a href="index.html" alt="introduction" class="introduction">Úvod</a>
         <a href="utkani.html" alt="matches" class="matches">Utkání</a>
         <a href="Treninky.html" alt="trainings" class="trainings">Tréninky</a>
         <div class="teams">
@@ -303,7 +491,6 @@
                   <input type="submit" id="submit" onclick="loginSubmit()" value="ODESLAT">
               </div>
             </form>
-            <p class="registration">Original copyright ©FK Rudná</p>
         </div>
       </div>
   </div>
