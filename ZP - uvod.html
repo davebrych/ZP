@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://api.cajthaml.eu/upload/reset_595b8cd7ad.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <title>Závěrečná práce</title>
+  <style>
+    body{
+      font-family: 'Kanit', sans-serif;
+    }
+    .header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(49, 47, 47);
+      color: white;
+      height: 50px;
+      padding: 10px;
+    }
+    .menu{
+      display: flex;
+      align-items: center;
+    }
+    .logo{
+      width: 60px;
+      height: 60px;
+    }
+    .h{
+      font-size: 1.5em;
+      padding-left: 20px;
+    }
+    .text{
+      padding-left: 20px;
+      font-size: 1.2em;
+      display: flex;
+      align-items: center;
+    }
+    .icon{
+      font-size: 2.2em;
+      margin-left: 40%;
+      color: white;
+    }
+    .icon:hover{
+      color: rgb(12, 28, 245);
+      background-color: white;
+      opacity: 0.7;
+      padding: 3px;
+      border-radius: 5px;
+    }
+    .search{
+      display: flex;
+      max-width: 300px;
+      padding-right: 15px;
+    }
+    .search input[type=text] {
+      padding: 5px;
+      font-size: 17px;
+      border: 1px solid rgb(49, 47, 47);
+      width: 80%;
+      background: #f1f1f1;
+      float: left;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    .search button {
+      float: left;
+      width: 20%;
+      padding: 10px;
+      background: #565a5e;
+      color: white;
+      font-size: 17px;
+      border: 1px solid rgb(49, 47, 47);
+      border-left: none;
+      cursor: pointer;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .search button:hover {
+      background: #828588;
+    }
+    .matches{
+      margin-left: 30px;
+      color: white;
+    }
+    .matches:hover{
+      color: grey;
+      opacity: 0.5;
+    }
+    .trainings{
+      margin-left: 30px;
+      color: white;
+    }
+    .trainings:hover{
+      color: grey;
+      opacity: 0.5;
+    }
+    .dropbtn{
+      background-color: rgb(49, 47, 47);
+      color: white;
+      border: none;
+      font-size: 1em;
+      font-family: 'Kanit', sans-serif;
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+    .teams{
+      margin-left: 30px;
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content{
+      display: none;
+      position: absolute;
+      background-color: rgb(49, 47, 47);
+      min-width: 160px;
+      z-index: 1;
+      border-bottom-left-radius: 3px ;
+      border-bottom-right-radius: 3px;
+    }
+    .dropdown-content a{
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      color: white;
+    }
+    .dropdown-content a:hover{
+      color: grey;
+    }
+    .teams:hover .dropdown-content {
+      display: block;
+    }
+    .teams:hover .dropbtn {
+      color: grey;
+      opacity: 0.5;
+    }
+    .contacts{
+      margin-left: 30px;
+      color: white;
+    }
+    .contacts:hover{
+      color: grey;
+      opacity: 0.5;
+    }
+    .container{
+      margin-top: 70px;
+      box-shadow: 5px 10px 18px #888888;
+      margin-left: 10%;
+      margin-right: 10%;
+      border-radius: 10px;
+      margin-bottom: 50px;
+    }
+    .picture{
+      width: 100%;
+      height: 60vh;
+      opacity: 0.8;
+      background-image: url(https://image.jimcdn.com/app/cms/image/transf/dimension=2048x2048:format=jpg/path/s5b1bb767ef4b489f/image/i77542944b07155ae/version/1591994812/image.jpg);
+      display: flex;
+      text-align: center;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-top: outset 3px rgb(104, 102, 102);
+      border-bottom: inset 3px rgb(104, 102, 102);
+    }
+    .content{
+      padding-bottom: 50px;
+    }
+    .news{
+      display: flex;
+      justify-content: space-evenly;
+      padding-top: 5%;
+      font-weight: bolder;
+      line-height: 1.5em; 
+      font-size: 1.2em;
+    }
+    .news h1{
+      font-size: 1.5em;
+      padding-bottom: 10px;
+      color: rgb(25, 189, 253);
+    }
+    .clubnews{
+      background-color: whitesmoke;
+      padding: 20px;
+      border-radius: 5px;
+      color: rgb(255, 37, 37);
+      width: 490px;
+    }
+    .adults{
+      background-color: whitesmoke;
+      padding: 20px;
+      border-radius: 5px;
+      color: rgb(255, 37, 37);
+      width: 490px;
+    }
+    .tables{
+      margin-top: 5%;
+      line-height: 1.7em;
+    }
+    .results{
+      background-color: whitesmoke;
+      font-weight: bolder;
+      margin: 100px;
+      border-radius: 10px;
+    }
+    .results h1{
+      font-size: 1.5em;
+      padding: 10px;
+      color: rgb(25, 189, 253);
+    }
+    .incoming{
+      background-color: whitesmoke;
+      font-weight: bolder;
+      margin: 100px;
+      border-radius: 10px;
+    }
+    .incoming h1{
+      font-size: 1.5em;
+      padding: 10px;
+      color: rgb(25, 189, 253);
+    }
+    .row1{
+      background-color: white;
+      padding: 5px;
+      color: rgb(255, 37, 37);
+      display: flex;
+      justify-content: space-between;
+      padding-left: 50px;
+      padding-right: 100px;
+    }
+    .row2{
+      padding: 5px;
+      color: rgb(255, 37, 37);
+      display: flex;
+      justify-content: space-between;
+      padding-left: 50px;
+      padding-right: 100px;
+    }
+    .sponsors{
+      padding: 30px;
+      font-weight: bolder;
+      font-size: 1.2em;
+      text-align: center;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    .footer{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(49, 47, 47);
+      color: white;
+      height: 30px;
+      padding: 10px;
+    }
+    @media(max-width: 1440px){
+      .icon{
+        margin-left: 25%;
+      }
+    }
+    @media(max-width:1024px){
+      .icon{
+        margin-left: 50px;
+      }
+      .search{
+        max-width: 200px;
+      }
+      .news{
+        font-size: 1em;
+      }
+      .news h1{
+        font-size: 1.2em;
+      }
+      .clubnews{
+        width: 250px;
+      }
+      .adults{
+        width: 250px;
+      }
+      .row1{
+        padding-right: 50px;
+      }
+      .row2{
+        padding-right: 50px;
+      }
+    }
+    @media(max-width:768px){
+      .header{
+        height: 40px;
+      }
+      .h{
+        font-size: 1.2em;
+      }
+      .logo{
+        width: 40px;
+        height: 40px;
+      }
+      .text{
+        font-size: 1em;
+      }
+      .matches{
+        margin-left: 20px;
+      }
+      .dropbtn{
+        padding-top: 15px; ;
+        padding-bottom: 15px;
+      }
+      .trainings{
+        margin-left: 20px;
+      }
+      .teams{
+        margin-left: 20px;
+      }
+      .contacts{
+        margin-left: 20px;
+      }
+      .icon{
+        margin-left: 40px;
+        font-size: 1.7em;
+      }
+      .search{
+        max-width: 150px;
+        padding-right: 10px;
+      }
+      .search input{
+        width: 60%;
+        font-size: 15px;
+      }
+      .search button{
+        width: 30%;
+        font-size: 15px;
+        padding: 5px;
+      }
+      .container{
+        margin-top: 50px;
+      }
+      .news h1{
+        padding-bottom: 2px;
+      }
+      .clubnews{
+        width: 230px;
+      }
+      .adults{
+        width: 230px;
+      }
+      .results{
+        margin: 20px;
+        margin-top: 30px;
+      }
+      .results h1{
+        font-size: 1.2em;
+      }
+      .incoming{
+        margin: 20px;
+        margin-top: 30px;
+      }
+      .incoming h1{
+        font-size: 1.2em;
+      }
+      .row1{
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .row2{
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+    @media(max-width:425px){
+      .header{
+        height: 30px;
+        padding:5px;
+      }
+      .h{
+        width: 0%;
+        overflow: hidden;
+      }
+      .logo{
+        margin-left: 0px;
+        width: 30px;
+        height: 30px;
+      }
+      .text{
+        padding-left: 5px;
+        font-size: 0.8em;
+      }
+      .introduction{
+        margin-left: -15px;
+      }
+      .matches{
+        margin-left: 10px;
+        align-items: center;
+      }
+      .dropbtn{
+        padding-top: 8px; ;
+        padding-bottom: 10px;
+      }
+      .trainings{
+        margin-left: 5px;
+      }
+      .teams{
+        margin-left: 0px;
+      }
+      .contacts{
+        margin-left: 0px;
+      }
+      .icon{
+        margin-left: -20px;
+        font-size: 1.2em;
+      }
+      .search{
+        max-width: 150px;
+        padding-right: 2px;
+      }
+      .search input{
+        width: 50%;
+        font-size: 10px;
+      }
+      .search button{
+        width: 50%;
+        font-size: 1px;
+        padding: 5px;
+      }
+      .container{
+        margin-top: 50px;
+      }
+      .news{
+        display: flex;
+        flex-direction: column;
+      }
+      .news h1{
+        padding-bottom: 2px;
+      }
+      .clubnews{
+        width: 230px;
+      }
+      .adults{
+        width: 230px;
+      }
+      .results{
+        margin: 20px;
+        margin-top: 30px;
+      }
+      .results h1{
+        font-size: 1.2em;
+      }
+      .incoming{
+        margin: 20px;
+        margin-top: 30px;
+      }
+      .incoming h1{
+        font-size: 1.2em;
+      }
+      .row1{
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .row2{
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="menu">
+      <img src="znak.jpg" alt="znak" class="logo">
+      <p class="h">FK Rudná</p>
+      <div class="text">
+          <div class="introduction">Úvod</div>
+          <a href="utkani.html" class="matches">Utkání</a>
+          <a href="Treninky.html" class="trainings">Tréninky</a>
+          <div class="teams">
+            <button class="dropbtn">Týmy</button>
+            <div class="dropdown-content">
+              <a href="Tymy - A tym.html">A-tým</a>
+              <a href="Tymy Dorost.html">Dorost</a>
+              <a href="tymy u15.html">Starší žáci</a>
+            </div>
+          </div>
+          <a href="kontakty.html" class="contacts">Kontakty</a>
+      </div>
+    </div>
+    <a href="https://cs-cz.facebook.com/FKRUDNA/" class="icon"><i class="fab fa-facebook-square"></i></a>
+    <form class="search">
+      <input type="text" placeholder="Hledat..." name="search2">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  <div class="container">
+    <div class="sponsors">
+      Sponzoři klubu: <a href="https://www.rudnamesto.cz/" alt="sponsors">Město Rudná</a> &bull; <a href="https://www.tsrudna.cz/" alt="sponsors">Technické služby Rudná</a> &bull; <a href="http://www.safranka-rudna.cz/" alt="sponsors">Čerpací stanice Šafránka Rudná</a> &bull; <a href="http://www.logosign.cz/" alt="sponsors">Logosign</a> &bull; <a href="http://www.domohustoles.cz/" alt="sponsors">Domo Hustoles</a> &bull; <a href="https://www.eldata.cz/" alt="sponsors">ELDATA poskytovatel internetu</a> &bull; <a href="https://www.restaurace-obzor.cz/" alt="sponsors">Restaurace Obzor</a> &bull; <a href="https://www.edittisk.cz/" alt="sponsors">Tiskárna EDIT</a> &bull; <a href="https://www.firmy.cz/detail/12719393-lubos-tryb-tachlovice.html" alt="sponsors">Luboš Trýb - zemní a výkopové práce</a> &bull; <a href="https://www.sggeosan.cz/" alt="sponsors">SG Geosan</a> &bull;<a href="https://sasglass.cz/" alt="sponsors">SAŠ Sklenáři</a> &bull; <a href="http://www.zemnipracestefanek.cz/" alt="sponsors">TRAST</a> &bull; <a href="https://www.friclegal.cz/" alt="sponsors">Advokát Mgr. Bc. Milan Fric, LL.M.</a> &bull; <a href="https://eshop.agromaknd.cz/" alt="sponsors">AgromakND s.r.o.</a> &bull;
+    </div>
+    <div class="picture"></div>
+    <div class="content">
+      <div class="news">
+        <div class="clubnews">
+          <h1>KLUBOVÉ NOVINKY</h1>
+          <hr>
+          <p>COVID-19: pravidla chování na sportovišti</p>
+          <p>ČLENSKÉ PŘÍSPĚVKY 2021</p>
+          <p>VALNÁ HROMADA 2021</p>
+          <p>Související opatření k 12.4. [COVID - 19]</p>
+          <p>FAČR-Desatero pravidel proti šíření nemoci [COVID-19]</p>
+          <p>FAČR-Prohlášení o bezinfekčnosti [COVID-19]</p>
+        </div>
+        <div class="adults">
+          <h1>NOVINKY   DOSPĚLÍ</h1>
+          <hr>
+          <p>TJ Tatran Rakovník - FK Rudná 2:3 (1:3)</p>
+          <p>FK Rudná - TJ Baník Lubná 0:4 (0:0)</p>
+          <p>SOKOL JEDOMĚLICE – FK RUDNÁ 2:2 n.p. 8:7 (2:0)</p>
+          <p>FK Rudná – SK Slaný "B" 1:5 (1:3)</p>
+        </div>
+      </div>
+      <div class="tables">
+        <div class="results">
+          <h1>AKTUÁLNÍ VÝSLEDKY</h1>
+          <hr>
+          <div class="row1">
+            <p class="date">30.11.</p>
+            <p class="category">U15</p>
+            <p class="home">Žebrák</p>
+            <p class="away">Rudná</p>
+            <p class="result">2:5</p>
+          </div>
+          <div class="row2">
+            <p class="date">28.11.</p>
+              <p class="category">U12</p>
+              <p class="home">Rudná</p>
+              <p class="away">Roztoky</p>
+              <p class="result">2:2</p>
+          </div>
+          <div class="row1">
+            <p class="date">03.10.</p>
+            <p class="category">U10</p>
+            <p class="home">Rudná</p>
+            <p class="away">Jinočany</p>
+            <p class="result">6:3</p>
+          </div>
+          <div class="row2">
+            <p class="date">04.10.</p>
+              <p class="category">U15</p>
+              <p class="home">Dobříš</p>
+              <p class="away">Rudná</p>
+              <p class="result">4:4</p>
+          </div>
+          <div class="row1">
+            <p class="date">13.09.</p>
+            <p class="category">U18</p>
+            <p class="home">Rakovník</p>
+            <p class="away">Rudná</p>
+            <p class="result">3:2</p>
+          </div>
+          <div class="row2">
+            <p class="date">12.09.</p>
+              <p class="category">"A"</p>
+              <p class="home">Rakovník B</p>
+              <p class="away">Rudná</p>
+              <p class="result">2:3</p>
+          </div>
+        </div>
+        <div class="incoming">
+          <h1>NEJBLIŽŠÍ UTKÁNÍ</h1>
+          <hr>
+          <div class="row1">
+            <p class="date">20.03.</p>
+            <p class="category">U18</p>
+            <p class="home">Rudná</p>
+            <p class="away">Kladno</p>
+            <p class="result">ZRUŠENO</p>
+          </div>
+          <div class="row2">
+            <p class="date">07.04.</p>
+              <p class="category">U15</p>
+              <p class="home">Rudná</p>
+              <p class="away">Lubná</p>
+              <p class="result">ZRUŠENO</p>
+          </div>
+          <div class="row1">
+            <p class="date">27.03.</p>
+            <p class="category">U12</p>
+            <p class="home">Loděnice</p>
+            <p class="away">Rudná</p>
+            <p class="result">ZRUŠENO</p>
+          </div>
+          <div class="row2">
+            <p class="date">21.03.</p>
+              <p class="category">U10</p>
+              <p class="home">Rudná</p>
+              <p class="away">Libiš</p>
+              <p class="result">ZRUŠENO</p>
+          </div>
+          <div class="row1">
+            <p class="date">20.03.</p>
+            <p class="category">U18</p>
+            <p class="home">Žebrák</p>
+            <p class="away">Rudná</p>
+            <p class="result">ZRUŠENO</p>
+          </div>
+          <div class="row2">
+            <p class="date">30.11.</p>
+              <p class="category">U15</p>
+              <p class="home">Rudná</p>
+              <p class="away">Lety</p>
+              <p class="result">ZRUŠENO</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>neoficiální webová stránka týmu FK Rudná slouží jako ZP na předmět WBA</p>
+  </div>
+</body>
+</html>

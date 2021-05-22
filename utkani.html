@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://api.cajthaml.eu/upload/reset_595b8cd7ad.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <title>Utkání</title>
+  <style>
+    body{
+      font-family: 'Kanit', sans-serif;
+    }
+    .header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(49, 47, 47);
+      color: white;
+      height: 50px;
+      padding: 10px;
+    }
+    .menu{
+      display: flex;
+      align-items: center;
+    }
+    .logo{
+      width: 60px;
+      height: 60px;
+    }
+    .text{
+      padding-left: 20px;
+      font-size: 1.2em;
+      display: flex;
+      align-items: center;
+    }
+    .h{
+      font-size: 1.5em;
+      padding-left: 20px;
+    }
+    .icon{
+      font-size: 2.2em;
+      margin-left: 40%;
+      color: white;
+    }
+    .icon:hover{
+      color: rgb(12, 28, 245);
+      background-color: white;
+      opacity: 0.7;
+      padding: 3px;
+      border-radius: 5px;
+      
+    }
+    .search{
+      display: flex;
+      max-width: 300px;
+      padding-right: 15px;
+    }
+    .search input[type=text] {
+      padding: 5px;
+      font-size: 17px;
+      border: 1px solid rgb(49, 47, 47);
+      width: 80%;
+      background: #f1f1f1;
+      float: left;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    .search button {
+      float: left;
+      width: 20%;
+      padding: 10px;
+      background: #565a5e;
+      color: white;
+      font-size: 17px;
+      border: 1px solid rgb(49, 47, 47);
+      border-left: none;
+      cursor: pointer;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .search button:hover {
+      background: #828588;
+    }
+    .introduction{
+      color: white;
+    }
+    .introduction:hover{
+      color: grey;
+      opacity: 0.5;
+    }
+    .matches{
+      margin-left: 30px;
+      color: white;
+    }
+    .trainings{
+      margin-left: 30px;
+      color: white;
+    }
+    .trainings:hover{
+      color: grey;
+      opacity: 0.5;
+    }
+    .dropbtn{
+      background-color: rgb(49, 47, 47);
+      color: white;
+      border: none;
+      font-size: 1em;
+      font-family: 'Kanit', sans-serif;
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+    .teams{
+      margin-left: 30px;
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content{
+      display: none;
+      position: absolute;
+      background-color: rgb(49, 47, 47);
+      min-width: 160px;
+      z-index: 1;
+      border-bottom-left-radius: 3px ;
+      border-bottom-right-radius: 3px;
+    }
+    .dropdown-content a{
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      color: white;
+    }
+    .dropdown-content a:hover{
+      color: grey;
+    }
+    .teams:hover .dropdown-content {
+      display: block;
+    }
+    .teams:hover .dropbtn {
+      color: grey;
+      opacity: 0.5;
+    }
+    .contacts{
+      margin-left: 30px;
+      color: white;
+    }
+    .contacts:hover{
+      color: grey;
+      opacity: 0.5;
+    }
+    .container{
+      margin-top: 50px;
+      box-shadow: 5px 10px 18px #888888;
+      margin-left: 10%;
+      margin-right: 10%;
+      border-radius: 10px;
+      margin-bottom: 50px;
+    }
+    .content{
+      padding-bottom: 20px;
+    }
+    .table{
+      margin-top: 5%;
+      line-height: 1.7em;
+      padding-top: 10px
+    }
+    .results{
+      background-color: whitesmoke;
+      font-weight: bolder;
+      margin: 50px;
+      border-radius: 10px;
+    }
+    .results h1{
+      font-size: 1.5em;
+      padding: 10px;
+      color: rgb(25, 189, 253);
+    }
+    .row1{
+      background-color: white;
+      padding: 5px;
+      color: rgb(255, 37, 37);
+      display: flex;
+      justify-content: space-between;
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    .row2{
+      padding: 5px;
+      color: rgb(255, 37, 37);
+      display: flex;
+      justify-content: space-between;
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    .footer{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(49, 47, 47);
+      color: white;
+      height: 30px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="menu">
+      <img src="znak.jpg" alt="znak" class="logo">
+      <p class="h">FK Rudná</p>
+      <div class="text">
+        <a href="ZP - uvod.html" alt="introduction" class="introduction">Úvod</a>
+        <div class="matches">Utkání</div>
+        <a href="Treninky.html" alt="trainings" class="trainings">Tréninky</a>
+        <div class="teams">
+          <button class="dropbtn">Týmy</button>
+          <div class="dropdown-content">
+            <a href="Tymy - A tym.html">A-tým</a>
+            <a href="Tymy Dorost.html">Dorost</a>
+            <a href="tymy u15.html">Starší žáci</a>
+          </div>
+        </div>
+        <a href="kontakty.html" class="contacts">Kontakty</a>
+    </div>
+    </div>
+    <a href="https://cs-cz.facebook.com/FKRUDNA/" class="icon"><i class="fab fa-facebook-square"></i></a>
+    <form class="search">
+      <input type="text" placeholder="Hledat..." name="search2">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  <div class="container">
+    <div class="picture"></div>
+    <div class="content">
+      <div class="table">
+        <div class="results">
+          <h1>JIŽ ODEHRANÁ UTKÁNÍ</h1>
+          <hr>
+          <div class="row1">
+              <p class="date">13.10.</p>
+              <p class="category">U10</p>
+              <p class="home">Velvary</p>
+              <p class="away">Rudná</p>
+              <p class="result">0:0</p>
+          </div>
+          <div class="row2">
+              <p class="date">08.10.</p>
+              <p class="category">U18</p>
+              <p class="home">Rudná</p>
+              <p class="away">Lhota</p>
+              <p class="result">1:1</p>
+          </div>
+          <div class="row1">
+              <p class="date">08.10.</p>
+              <p class="category">U15</p>
+              <p class="home">Jeneč</p>
+              <p class="away">Rudná</p>
+              <p class="result">4:4</p>
+          </div>
+          <div class="row2">
+              <p class="date">07.10.</p>
+              <p class="category">U12</p>
+              <p class="home">Rudná</p>
+              <p class="away">Všeradice</p>
+              <p class="result">3:0</p>
+          </div>
+          <div class="row1">
+            <p class="date">04.10.</p>
+            <p class="category">U18</p>
+            <p class="home">Dobříč</p>
+            <p class="away">Rudná</p>
+            <p class="result">2:4</p>
+        </div>
+        <div class="row2">
+            <p class="date">04.10.</p>
+            <p class="category">U15</p>
+            <p class="home">Rudná</p>
+            <p class="away">Lány</p>
+            <p class="result">6:1</p>
+        </div>
+        <div class="row1">
+            <p class="date">02.10.</p>
+            <p class="category">U10</p>
+            <p class="home">Černošice</p>
+            <p class="away">Rudná</p>
+            <p class="result">4:5</p>
+        </div>
+        <div class="row2">
+            <p class="date">02.10.</p>
+            <p class="category">U15</p>
+            <p class="home">Rudná</p>
+            <p class="away">Mníšek</p>
+            <p class="result">5:1</p>
+        </div>
+        <div class="row1">
+            <p class="date">26.09.</p>
+            <p class="category">U12</p>
+            <p class="home">Přílepy</p>
+            <p class="away">Rudná</p>
+            <p class="result">4:2</p>
+        </div>
+        <div class="row2">
+            <p class="date">25.09.</p>
+            <p class="category">U18</p>
+            <p class="home">Rudná</p>
+            <p class="away">Loděnice</p>
+            <p class="result">3:3</p>
+        </div>
+        <div class="row1">
+            <p class="date">19.09.</p>
+            <p class="category">U10</p>
+            <p class="home">Loděnice</p>
+            <p class="away">Rudná</p>
+            <p class="result">7:8</p>
+        </div>
+        <div class="row2">
+            <p class="date">18.09.</p>
+            <p class="category">U12</p>
+            <p class="home">Rudná</p>
+            <p class="away">Hostouň</p>
+            <p class="result">6:2</p>
+        </div>
+        <div class="row1">
+            <p class="date">15.09.</p>
+            <p class="category">U18</p>
+            <p class="home">Kralupy</p>
+            <p class="away">Rudná</p>
+            <p class="result">4:10</p>
+        </div>
+        <div class="row2">
+            <p class="date">13.09.</p>
+            <p class="category">U15</p>
+            <p class="home">Rudná</p>
+            <p class="away">Holubice</p>
+            <p class="result">3:2</p>
+        </div>
+        <div class="row1">
+            <p class="date">12.09.</p>
+            <p class="category">U15</p>
+            <p class="home">Braškov</p>
+            <p class="away">Rudná</p>
+            <p class="result">2:3</p>
+        </div>
+        <div class="row2">
+            <p class="date">07.09.</p>
+            <p class="category">U12</p>
+            <p class="home">Rudná</p>
+            <p class="away">Pavlíkov</p>
+            <p class="result">3:10</p>
+        </div>
+        <div class="row1">
+            <p class="date">07.09.</p>
+            <p class="category">U10</p>
+            <p class="home">Holubice</p>
+            <p class="away">Rudná</p>
+            <p class="result">0:8</p>
+        </div>
+        <div class="row2">
+            <p class="date">07.09.</p>
+            <p class="category">U18</p>
+            <p class="home">Rudná</p>
+            <p class="away">Kladno</p>
+            <p class="result">1:1</p>
+        </div>
+        <div class="row1">
+            <p class="date">06.09.</p>
+            <p class="category">U12</p>
+            <p class="home">Úhonice</p>
+            <p class="away">Rudná</p>
+            <p class="result">3:9</p>
+        </div>
+        <div class="row2">
+            <p class="date">06.09</p>
+            <p class="category">U110</p>
+            <p class="home">Rakovník</p>
+            <p class="away">Rudná</p>
+            <p class="result">4:3</p>
+        </div>
+        <div class="row1">
+            <p class="date">06.09.</p>
+            <p class="category">U15</p>
+            <p class="home">Roztoky</p>
+            <p class="away">Rudná</p>
+            <p class="result">0:11</p>
+        </div>
+        <div class="row2">
+            <p class="date">06.09.</p>
+            <p class="category">U18</p>
+            <p class="home">Rudná</p>
+            <p class="away">Komárov</p>
+            <p class="result">5:3</p>
+        </div>
+        <div class="row1">
+            <p class="date">05.09.</p>
+            <p class="category">U12</p>
+            <p class="home">Zdice</p>
+            <p class="away">Rudná</p>
+            <p class="result">0:4</p>
+        </div>
+        <div class="row2">
+            <p class="date">30.08.</p>
+            <p class="category">U18</p>
+            <p class="home">Rudná</p>
+            <p class="away">Roztoky</p>
+            <p class="result">2:2</p>
+        </div>
+        <div class="row1">
+            <p class="date">29.08.</p>
+            <p class="category">U10</p>
+            <p class="home">Lubná</p>
+            <p class="away">Rudná</p>
+            <p class="result">0:3</p>
+        </div>
+        <div class="row2">
+            <p class="date">22.08.</p>
+            <p class="category">U15</p>
+            <p class="home">Rudná</p>
+            <p class="away">Slaný B</p>
+            <p class="result">1:5</p>
+        </div>
+        <div class="row1">
+            <p class="date">18.08.</p>
+            <p class="category">U18</p>
+            <p class="home">Libčice</p>
+            <p class="away">Rudná</p>
+            <p class="result">0:1</p>
+        </div>
+        <div class="row2">
+            <p class="date">16.08.</p>
+            <p class="category">U15</p>
+            <p class="home">Rudná</p>
+            <p class="away">Švermov</p>
+            <p class="result">2:1</p>
+        </div>
+        <div class="row1">
+            <p class="date">02.08.</p>
+            <p class="category">U10</p>
+            <p class="home">Žebrák</p>
+            <p class="away">Rudná</p>
+            <p class="result">2:1</p>
+        </div>
+        <div class="row2">
+            <p class="date">30.07.</p>
+            <p class="category">U12</p>
+            <p class="home">Rudná</p>
+            <p class="away">Libiš</p>
+            <p class="result">2:3</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>neoficiální webová stránka týmu FK Rudná slouží jako ZP na předmět WBA</p>
+  </div>
+</body>
+</html>

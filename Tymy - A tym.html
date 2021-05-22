@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://api.cajthaml.eu/upload/reset_595b8cd7ad.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <title>A-tým</title>
+  <style>
+    body{
+      font-family: 'Kanit', sans-serif;
+    }
+    .header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(49, 47, 47);
+      color: white;
+      height: 50px;
+      padding: 10px;
+    }
+    .menu{
+      display: flex;
+      align-items: center;
+    }
+    .text{
+      padding-left: 20px;
+      font-size: 1.2em;
+      display: flex;
+      align-items: center;
+    }
+    .logo{
+      width: 60px;
+      height: 60px;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    .h{
+      font-size: 1.5em;
+      padding-left: 20px;
+    }
+    .introduction{
+      color: white;
+    }
+    .introduction:hover{
+      color: grey;
+      opacity: 0.5;
+    }
+    .matches{
+      margin-left: 30px;
+      color: white;
+    }
+    .matches:hover{
+      color: grey;
+      opacity: 0.5;
+    }
+    .trainings{
+      margin-left: 30px;
+      color: white;
+    }
+    .trainings:hover{
+      color: grey;
+      opacity: 0.5;
+    }
+    .dropbtn{
+      background-color: rgb(49, 47, 47);
+      color: white;
+      border: none;
+      font-size: 1em;
+      font-family: 'Kanit', sans-serif;
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+    .teams{
+      margin-left: 30px;
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content{
+      display: none;
+      position: absolute;
+      background-color: rgb(49, 47, 47);
+      min-width: 160px;
+      z-index: 1;
+      border-bottom-left-radius: 3px ;
+      border-bottom-right-radius: 3px;
+    }
+    .ateam{
+      padding: 12px 16px;
+    }
+    .contacts{
+      margin-left: 30px;
+      color: white;
+    }
+    .contacts:hover{
+      color: grey;
+      opacity: 0.5;
+    }
+    .dropdown-content a{
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      color: white;
+    }
+    .dropdown-content a:hover{
+      color: grey;
+    }
+    .teams:hover .dropdown-content {
+      display: block;
+    }
+    .teams:hover .dropbtn {
+      color: grey;
+      opacity: 0.5;
+    }
+    .icon{
+      font-size: 2.2em;
+      margin-left: 40%;
+      color: white;
+    }
+    .icon:hover{
+      color: rgb(12, 28, 245);
+      background-color: white;
+      opacity: 0.7;
+      padding: 3px;
+      border-radius: 5px;
+    }
+    .search{
+      display: flex;
+      max-width: 300px;
+      padding-right: 15px;
+    }
+    .search input[type=text] {
+      padding: 5px;
+      font-size: 17px;
+      border: 1px solid rgb(49, 47, 47);
+      width: 80%;
+      background: #f1f1f1;
+      float: left;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    .search button {
+      float: left;
+      width: 20%;
+      padding: 10px;
+      background: #565a5e;
+      color: white;
+      font-size: 17px;
+      border: 1px solid rgb(49, 47, 47);
+      border-left: none;
+      cursor: pointer;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .search button:hover {
+      background: #828588;
+    }
+    .container{
+      margin-top: 50px;
+      box-shadow: 5px 10px 18px #888888;
+      margin-left: 10%;
+      margin-right: 10%;
+      border-radius: 10px;
+      margin-bottom: 50px;
+    }
+    .content{
+      padding-bottom: 20px;
+    }
+    .table{
+      margin-top: 5%;
+      line-height: 1.7em;
+      padding-top: 10px
+    }
+    .incoming{
+      background-color: whitesmoke;
+      font-weight: bolder;
+      margin: 50px;
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .incoming h1{
+      font-size: 1.5em;
+      padding: 10px;
+      color: rgb(25, 189, 253);
+    }
+    .results{
+      background-color: whitesmoke;
+      font-weight: bolder;
+      margin: 50px;
+      border-radius: 10px;
+    }
+    .results h1{
+      font-size: 1.5em;
+      padding: 10px;
+      color: rgb(25, 189, 253);
+    }
+    .headline{
+      padding: 5px;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    .row1{
+      background-color: white;
+      padding: 5px;
+      color: rgb(255, 37, 37);
+      display: flex;
+      justify-content: space-between;
+      padding-left: 50px;
+      padding-right: 80px;
+    }
+    .row2{
+      padding: 5px;
+      color: rgb(255, 37, 37);
+      display: flex;
+      justify-content: space-between;
+      padding-left: 50px;
+      padding-right: 80px;
+    }
+    .footer{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(49, 47, 47);
+      color: white;
+      height: 30px;   
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="menu">
+      <img src="znak.jpg" alt="znak" class="logo">
+      <p class="h">FK Rudná</p>
+      <div class="text">
+        <a href="ZP - uvod.html" alt="introduction" class="introduction">Úvod</a>
+        <a href="utkani.html" alt="matches" class="matches">Utkání</a>
+        <a href="Treninky.html" alt="trainings" class="trainings">Tréninky</a>
+        <div class="teams">
+          <button class="dropbtn">Týmy</button>
+          <div class="dropdown-content">
+            <div class="ateam">A-tým</div>
+            <a href="Tymy Dorost.html">Dorost</a>
+            <a href="tymy u15.html">Starší žáci</a>
+          </div>
+        </div>
+        <a href="kontakty.html" class="contacts">Kontakty</a>
+    </div>
+    </div>
+    <a href="https://cs-cz.facebook.com/FKRUDNA/" class="icon"><i class="fab fa-facebook-square"></i></a>
+    <form class="search">
+      <input type="text" placeholder="Hledat..." name="search2">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  <div class="container">
+    <div class="content">
+      <div class="table">
+          <div class="incoming">
+              <h1>NEJBLIŽŠÍ UTKÁNÍ</h1>
+              <hr>
+              <p>Žádná blízká utkání k zobrazení. </p>
+          </div>
+        <div class="results">
+          <h1>JIŽ ODEHRANÁ UTKÁNÍ</h1>
+          <hr>
+          <div class="headline">
+              <p class="hdate">DATUM</p>
+              <p class="hday">DEN</p>
+              <p class="htime">ČAS</p>
+              <p class="hcategory">KATEGORIE</p>
+              <p class="hhome">DOMÁCÍ</p>
+              <p class="haway">HOSTÉ</p>
+              <p class="hresult">VÝSLEDEK</p>
+          </div>
+          <div class="row1">
+              <p class="date">30.09.</p>
+              <p class="day">ST</p>
+              <p class="time">19:00</p>
+              <p class="category">A-tým</p>
+              <p class="home">Kladno</p>
+              <p class="away">Rudná</p>
+              <p class="result">2:2</p>
+          </div>
+          <div class="row2">
+              <p class="date">27.09.</p>
+              <p class="day">NE</p>
+              <p class="time">16:30</p>
+              <p class="category">A-tým</p>
+              <p class="home">Rudná</p>
+              <p class="away">Hostouň</p>
+              <p class="result">4:2</p>
+          </div>
+          <div class="row1">
+            <p class="date">12.09.</p>
+            <p class="day">SO</p>
+            <p class="time">10:15</p>
+            <p class="category">A-tým</p>
+            <p class="home">Loděnice</p>
+            <p class="away">Rudná</p>
+            <p class="result">2:3</p>
+        </div>
+        <div class="row2">
+            <p class="date">05.09.</p>
+            <p class="day">SO</p>
+            <p class="time">17:00</p>
+            <p class="category">A-tým</p>
+            <p class="home">Rudná</p>
+            <p class="away">Braškov</p>
+            <p class="result">0:4</p>
+        </div>
+        <div class="row1">
+            <p class="date">30.08.</p>
+            <p class="day">NE</p>
+            <p class="time">17:00</p>
+            <p class="category">A-tým</p>
+            <p class="home">Rakovník</p>
+            <p class="away">Rudná</p>
+            <p class="result">2:2</p>
+        </div>
+        <div class="row2">
+            <p class="date">22.08.</p>
+            <p class="day">SO</p>
+            <p class="time">17:00</p>
+            <p class="category">A-tým</p>
+            <p class="home">Rudná</p>
+            <p class="away">Lubná</p>
+            <p class="result">1:5</p>
+        </div>
+        <div class="row1">
+            <p class="date">18.08.</p>
+            <p class="day">ÚT</p>
+            <p class="time">18:30</p>
+            <p class="category">A-tým</p>
+            <p class="home">Žebrák</p>
+            <p class="away">Rudná</p>
+            <p class="result">0:1</p>
+        </div>
+        <div class="row2">
+            <p class="date">16.08.</p>
+            <p class="day">NE</p>
+            <p class="time">17:00</p>
+            <p class="category">A-tým</p>
+            <p class="home">Rudná</p>
+            <p class="away">Jinočany</p>
+            <p class="result">2:1</p>
+        </div>
+        <div class="row1">
+            <p class="date">02.08.</p>
+            <p class="day">NE</p>
+            <p class="time">17:00</p>
+            <p class="category">A-tým</p>
+            <p class="home">Švermov</p>
+            <p class="away">Rudná</p>
+            <p class="result">1:2</p>
+        </div>
+        <div class="row2">
+            <p class="date">30.07.</p>
+            <p class="day">ČT</p>
+            <p class="time">18:00</p>
+            <p class="category">A-tým</p>
+            <p class="home">Rudná</p>
+            <p class="away">Řepy</p>
+            <p class="result">3:2</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>neoficiální webová stránka týmu FK Rudná slouží jako ZP na předmět WBA</p>
+  </div>
+</body>
+</html>

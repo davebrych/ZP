@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://api.cajthaml.eu/upload/reset_595b8cd7ad.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <title>A-tým</title>
+  <style>
+    body{
+      font-family: 'Kanit', sans-serif;
+    }
+    .header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(49, 47, 47);
+      color: white;
+      height: 50px;
+      padding: 10px;
+    }
+    .menu{
+      display: flex;
+      align-items: center;
+    }
+    .text{
+      padding-left: 20px;
+      font-size: 1.2em;
+      display: flex;
+      align-items: center;
+    }
+    .logo{
+      width: 60px;
+      height: 60px;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    .h{
+      font-size: 1.5em;
+      padding-left: 20px;
+    }
+    .introduction{
+      color: white;
+    }
+    .introduction:hover{
+      color: grey;
+      opacity: 0.5;
+    }
+    .matches{
+      margin-left: 30px;
+      color: white;
+    }
+    .matches:hover{
+      color: grey;
+      opacity: 0.5;
+    }
+    .trainings{
+      margin-left: 30px;
+      color: white;
+    }
+    .trainings:hover{
+      color: grey;
+      opacity: 0.5;
+    }
+    .dropbtn{
+      background-color: rgb(49, 47, 47);
+      color: white;
+      border: none;
+      font-size: 1em;
+      font-family: 'Kanit', sans-serif;
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+    .teams{
+      margin-left: 30px;
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content{
+      display: none;
+      position: absolute;
+      background-color: rgb(49, 47, 47);
+      min-width: 160px;
+      z-index: 1;
+      border-bottom-left-radius: 3px ;
+      border-bottom-right-radius: 3px;
+    }
+    .ateam{
+      padding: 12px 16px;
+    }
+    .contacts{
+      padding-left: 30px;
+    }
+    .dropdown-content a{
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      color: white;
+    }
+    .dropdown-content a:hover{
+      color: grey;
+    }
+    .teams:hover .dropdown-content {
+      display: block;
+    }
+    .teams:hover .dropbtn {
+      color: grey;
+      opacity: 0.5;
+    }
+    .icon{
+      font-size: 2.2em;
+      margin-left: 40%;
+      color: white;
+    }
+    .icon:hover{
+      color: rgb(12, 28, 245);
+      background-color: white;
+      opacity: 0.7;
+      padding: 3px;
+      border-radius: 5px;
+    }
+    .search{
+      display: flex;
+      max-width: 300px;
+      padding-right: 15px;
+    }
+    .search input[type=text] {
+      padding: 5px;
+      font-size: 17px;
+      border: 1px solid rgb(49, 47, 47);
+      width: 80%;
+      background: #f1f1f1;
+      float: left;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    .search button {
+      float: left;
+      width: 20%;
+      padding: 10px;
+      background: #565a5e;
+      color: white;
+      font-size: 17px;
+      border: 1px solid rgb(49, 47, 47);
+      border-left: none;
+      cursor: pointer;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .search button:hover {
+      background: #828588;
+    }
+    .content{
+        display: flex;
+        justify-content: center;
+        margin-top: 70px;
+        margin-bottom: 129px;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        font-size: 1.2em;
+        background-color: whitesmoke;
+        width: 80vh;
+        height: 65vh;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 5px 10px 18px #888888;
+    }
+        .container .incoming .head{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding-bottom: 20px;
+            margin-top: 50px;
+        }
+        #errorMessage{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: red;
+            padding-bottom: 20px;
+        }
+        .container .incoming .registration{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 70px;
+            font-size: 15px;
+        }
+        .container form .Name{
+            padding-bottom: 20px;
+        }
+        .container form .Name input{
+            padding: 10px;
+            background-color: white;
+            font-size: 1em;
+            width:50vh;
+            outline: none;
+            border: 1px solid rgba(34, 4, 90, 0.4);
+            border-radius: 5px;
+        }
+        .container form .field{
+            padding-bottom: 20px;
+        }
+        .container form .field input {
+            padding: 10px;
+            background-color: white;
+            font-size: 1em;
+            width: 50vh;
+            outline: none;
+            border: 1px solid rgba(34, 4, 90, 0.4);
+            border-radius: 5px;
+        }
+        textarea {
+            width: 100%;
+            height: 180px;
+            padding: 12px 10px;
+            box-sizing: border-box;
+            border: 1px solid rgba(34, 4, 90, 0.4);
+            border-radius: 4px;
+            background-color: white;
+            font-size: 1em;
+            resize: none;
+            margin-bottom: 30px;
+}
+        .container .submit{
+            display: flex;
+            justify-content: flex-end;
+            
+        }
+        .container .submit input{
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(25, 189, 253);
+            color: black;
+            font-weight: bold;
+            padding: 10px;
+            font-size: 1em;
+        }
+        .hidden {
+            display: none;
+}
+    .footer{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(49, 47, 47);
+      color: white;
+      height: 30px;   
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="menu">
+      <img src="znak.jpg" alt="znak" class="logo">
+      <p class="h">FK Rudná</p>
+      <div class="text">
+        <a href="ZP - uvod.html" alt="introduction" class="introduction">Úvod</a>
+        <a href="utkani.html" alt="matches" class="matches">Utkání</a>
+        <a href="Treninky.html" alt="trainings" class="trainings">Tréninky</a>
+        <div class="teams">
+          <button class="dropbtn">Týmy</button>
+          <div class="dropdown-content">
+            <a href="Tymy - A tym.html">A-tým</a>
+            <a href="Tymy Dorost.html">Dorost</a>
+            <a href="tymy u15.html">Starší žáci</a>
+          </div>
+        </div>
+        <div class="contacts">Kontakty</div>
+    </div>
+    </div>
+    <a href="https://cs-cz.facebook.com/FKRUDNA/" class="icon"><i class="fab fa-facebook-square"></i></a>
+    <form class="search">
+      <input type="text" placeholder="Hledat..." name="search2">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  <div class="content">
+    <div class="container">
+        <div class="incoming">
+            <h1 class="head">KONTAKTNÍ FORMULÁŘ</h1>
+            <p id="errorMessage"></p>
+            <form name="myForm" id="form" method="POST" action="https://formspree.io/f/mnqlpkzo">               
+                <div class="field">
+                    <input type="email" name="email" id="email" placeholder="E-mail">
+                </div>
+                <div class="Name">
+                    <input  type="name" name="name" id="name" placeholder="Jméno">
+                </div>
+                <textarea placeholder="Zpráva..." name="message" id="textarea"></textarea>
+                <div class="submit">
+                  <input type="submit" id="submit" onclick="loginSubmit()" value="ODESLAT">
+              </div>
+            </form>
+            <p class="registration">Original copyright ©FK Rudná</p>
+        </div>
+      </div>
+  </div>
+  <div class="footer">
+    <p>neoficiální webová stránka týmu FK Rudná slouží jako ZP na předmět WBA</p>
+  </div>
+  <script>
+    function loginSubmit() {
+        var email = document.getElementById("email")
+        if (email.value === "") return document.getElementById("errorMessage").innerHTML = "Prosím zadejte svůj E-mail"
+
+        var name = document.getElementById("name")
+        if (name.value === "") return document.getElementById("errorMessage").innerHTML = "Prosím zadej své jméno"
+
+        var name = document.getElementById("textarea")
+        if (name.value === "") return document.getElementById("errorMessage").innerHTML = "Nevyplnili jste zprávu, kterou nám chcete zaslat"
+
+        document.getElementById("errorMessage").innerHTML = " "
+    }
+</script>
+</body>
+</html>

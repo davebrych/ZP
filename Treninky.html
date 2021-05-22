@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://api.cajthaml.eu/upload/reset_595b8cd7ad.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <title>Tréninky</title>
+  <style>
+    body{
+      font-family: 'Kanit', sans-serif;
+    }
+    .header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(49, 47, 47);
+      color: white;
+      height: 50px;
+      padding: 10px; 
+    }
+    .menu{
+      display: flex;
+      align-items: center;
+    }
+    .text{
+      padding-left: 20px;
+      font-size: 1.2em;
+      display: flex;
+      align-items: center;
+    }
+    .icon{
+      font-size: 2.2em;
+      margin-left: 40%;
+      color: white;
+    }
+    .icon:hover{
+      color: rgb(12, 28, 245);
+      background-color: white;
+      opacity: 0.7;
+      padding: 3px;
+      border-radius: 5px;
+      transition: color 1.5s ease;
+      transition: background-color 1.5s ease;
+      transition: border-radius 1.5s ease;
+    }
+    .logo{
+      width: 60px;
+      height: 60px;
+    }
+    .h{
+      font-size: 1.5em;
+      padding-left: 20px;
+    }
+    .search{
+      display: flex;
+      max-width: 300px;
+      padding-right: 15px;
+    }
+    .search input[type=text] {
+      padding: 5px;
+      font-size: 17px;
+      border: 1px solid rgb(49, 47, 47);
+      width: 80%;
+      background: #f1f1f1;
+      float: left;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    .search button {
+      float: left;
+      width: 20%;
+      padding: 10px;
+      background: #565a5e;
+      color: white;
+      font-size: 17px;
+      border: 1px solid rgb(49, 47, 47);
+      border-left: none;
+      cursor: pointer;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .search button:hover {
+      background: #828588;
+    }
+    .introduction{
+      color: white;
+    }
+    .introduction:hover{
+      color: grey;
+      opacity: 0.5;
+      transition: color 1.5s ease;
+      transition: background-color 1.5s ease;
+      transition: border-radius 1.5s ease;
+    }
+    .matches{
+      margin-left: 30px;
+      color: white;
+    }
+    .matches:hover{
+      color: grey;
+      opacity: 0.5;
+      transition: color 1.5s ease;
+      transition: background-color 1.5s ease;
+      transition: border-radius 1.5s ease;
+    }
+      .trainings{
+        padding-left: 30px;
+      }
+    .dropbtn{
+      background-color: rgb(49, 47, 47);
+      color: white;
+      border: none;
+      font-size: 1em;
+      font-family: 'Kanit', sans-serif;
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+    .teams{
+      margin-left: 30px;
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content{
+      display: none;
+      position: absolute;
+      background-color: rgb(49, 47, 47);
+      min-width: 160px;
+      z-index: 1;
+      border-bottom-left-radius: 3px ;
+      border-bottom-right-radius: 3px;
+    }
+    .dropdown-content a{
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      color: white;
+    }
+    .dropdown-content a:hover{
+      color: grey;
+    }
+    .teams:hover .dropdown-content {
+      display: block;
+    }
+    .teams:hover .dropbtn {
+      color: grey;
+      opacity: 0.5;
+    }
+    .contacts{
+      margin-left: 30px;
+      color: white;
+    }
+    .contacts:hover{
+      color: grey;
+      opacity: 0.5;
+    }
+    .container{
+      margin-top: 70px;
+      box-shadow: 5px 10px 18px #888888;
+      margin-left: 10%;
+      margin-right: 10%;
+      border-radius: 10px;
+      margin-bottom: 50px;
+    }
+    .content{
+      padding-bottom: 50px;
+      display: flex;
+      justify-content: center;
+    }
+    .tables{
+      line-height: 1.7em;     
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    h1{
+      font-size: 1.8em;
+      padding-top: 70px;
+      padding-bottom: 30px;
+      font-weight: bolder;
+    }
+    tr{
+      text-transform: uppercase;
+    }
+    .season {
+      border-collapse: collapse;
+      font-weight: bolder;
+      border-radius: 10px;
+      text-align: center;
+      width: 120vh;
+      box-shadow: 2px 5px 10px #888888;
+    }
+    .season td, .season th {
+      border: solid 2px rgb(194, 188, 188);
+      padding: 8px;
+    }
+    .season tr:nth-child(even){
+      background-color: whitesmoke;
+    }
+    .season td:first-child{
+      color: rgb(25, 189, 253);
+      border-left: none;
+      border-bottom: none;
+      border-bottom-left-radius: 10px;
+    }
+    .season td:last-child{
+      border-right: none;
+    }
+    .season tr:last-child td:nth-child(2){
+      border-bottom: none;
+    }
+    .season tr:last-child td:nth-child(3){
+      border-bottom: none;
+    }
+    .season tr:last-child td:nth-child(4){
+      border-bottom: none;
+    }
+    .season tr:last-child td:nth-child(5){
+      border-bottom: none;
+    }
+    .season tr:last-child td:nth-child(6){
+      border-bottom: none;
+      border-bottom-right-radius: 10px;
+    }
+    .season th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      color: rgb(255, 37, 37);
+      border-top: none;
+    }
+    .season th:first-child{
+      border-left: none;
+    }
+    .season th:last-child{
+      border-right: none;
+    }
+    .winterbreak {
+      border-collapse: collapse;
+      font-weight: bolder;
+      border-radius: 10px;
+      text-align: center;
+      width: 120vh;
+      box-shadow: 2px 5px 10px #888888;
+    }
+    .winterbreak td, .winterbreak th {
+      border: solid 2px rgb(194, 188, 188);
+      padding: 8px;
+    }
+    .winterbreak tr:nth-child(even){
+      background-color: whitesmoke;
+    }
+    .winterbreak td:first-child{
+      color: rgb(25, 189, 253);
+      border-left: none;
+      border-bottom: none;
+      border-bottom-left-radius: 10px;
+    }
+    .winterbreak td:last-child{
+      border-right: none;
+    }
+    .winterbreak tr:last-child td:nth-child(2){
+      border-bottom: none;
+    }
+    .winterbreak tr:last-child td:nth-child(3){
+      border-bottom: none;
+    }
+    .winterbreak tr:last-child td:nth-child(4){
+      border-bottom: none;
+    }
+    .winterbreak tr:last-child td:nth-child(5){
+      border-bottom: none;
+    }
+    .winterbreak tr:last-child td:nth-child(6){
+      border-bottom: none;
+      border-bottom-right-radius: 10px;
+    }
+    .winterbreak th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      color: rgb(255, 37, 37);
+      border-top: none;
+    }
+    .winterbreak th:first-child{
+      border-left: none;
+    }
+    .winterbreak th:last-child{
+      border-right: none;
+    }
+    .footer{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(49, 47, 47);
+      color: white;
+      height: 30px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="menu">
+      <img src="znak.jpg" alt="znak" class="logo">
+      <p class="h">FK Rudná</p>
+      <div class="text">
+        <a href="ZP - uvod.html" alt="introduction" class="introduction">Úvod</a>
+        <a href="utkani.html" alt="matches" class="matches">Utkání</a>
+        <div class="trainings">Tréninky</div>
+        <div class="teams">
+          <button class="dropbtn">Týmy</button>
+          <div class="dropdown-content">
+            <a href="Tymy - A tym.html">A-tým</a>
+            <a href="Tymy Dorost.html">Dorost</a>
+            <a href="tymy u15.html">Starší žáci</a>
+          </div>
+        </div>
+        <a href="kontakty.html" class="contacts">Kontakty</a>
+    </div>
+    </div>
+    <a href="https://cs-cz.facebook.com/FKRUDNA/" class="icon"><i class="fab fa-facebook-square"></i></a>
+    <form class="search">
+      <input type="text" placeholder="Hledat..." name="search2">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  <div class="container">
+    <div class="content">
+      <div class="tables">
+        <table class="season">
+          <h1>HLAVNÍ SEZONA</h1>
+          <tr>
+            <th>kategorie / den</th>
+            <th>pondělí</th>
+            <th>Úterý</th>
+            <th>středa</th>
+            <th>čtvrtek</th>
+            <th>pátek</th>
+          </tr>
+          <tr>
+            <td>muži</td>
+            <td>---</td>
+            <td>18:00 - 19:30</td>
+            <td>---</td>
+            <td>18:00 - 19:30</td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>dorost (u18)</td>
+            <td>18:00 - 19:30</td>
+            <td>---</td>
+            <td>18:00 - 19:30</td>
+            <td>18:00 - 19:30</td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>starší žáci (u15)</td>
+            <td>16:30 - 18:00</td>
+            <td>---</td>
+            <td>16:30 - 18:00</td>
+            <td>---</td>
+            <td>16:30 - 18:00</td>
+          </tr>
+          <tr>
+            <td>mladší žáci (u12)</td>
+            <td>17:00 - 18:30</td>
+            <td>---</td>
+            <td>17:00 - 18:30</td>
+            <td>---</td>
+            <td>17:00 - 18:30</td>
+          </tr>
+          <tr>
+            <td>starší přípravka (u10)</td>
+            <td>---</td>
+            <td>16:30 - 18:00</td>
+            <td>---</td>
+            <td>16:30 - 18:00</td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>mladší přípravka (u8)</td>
+            <td>---</td>
+            <td>16:30 - 18:00</td>
+            <td>---</td>
+            <td>16:30 - 18:00</td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>mladší přípravka (u8)</td>
+            <td>---</td>
+            <td>16:00 - 17:00</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+          </tr>
+        </table>
+        <table class="winterbreak">
+          <h1>MIMO HLAVNÍ SEZONU</h1>
+          <tr>
+            <th>kategorie / den</th>
+            <th>pondělí</th>
+            <th>Úterý</th>
+            <th>středa</th>
+            <th>čtvrtek</th>
+            <th>pátek</th>
+          </tr>
+          <tr>
+            <td>muži</td>
+            <td>---</td>
+            <td>18:00 - 19:30</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>dorost (u18)</td>
+            <td>18:30 - 20:00</td>
+            <td>18:00 - 19:30</td>
+            <td>---</td>
+            <td>18:00 - 19:00</td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>starší žáci (u15)</td>
+            <td>16:00 - 17:00</td>
+            <td>---</td>
+            <td>16:00 - 17:00</td>
+            <td>---</td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>mladší žáci (u12)</td>
+            <td>17:00 - 18:00</td>
+            <td>---</td>
+            <td>17:00 - 18:00</td>
+            <td>---</td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>starší přípravka (u10)</td>
+            <td>---</td>
+            <td>17:00 - 18:00</td>
+            <td>---</td>
+            <td>17:00 - 18:00</td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>mladší přípravka (u8)</td>
+            <td>---</td>
+            <td>16:00 - 17:00</td>
+            <td>---</td>
+            <td>16:00 - 17:00</td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>mladší přípravka (u8)</td>
+            <td>---</td>
+            <td>16:00 - 17:00</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>neoficiální webová stránka týmu FK Rudná slouží jako ZP na předmět WBA</p>
+  </div>
+</body>
+</html>
