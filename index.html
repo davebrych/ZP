@@ -411,41 +411,50 @@
         margin-left: 0px;
       }
       .icon{
-        margin-left: -20px;
+        margin-left: -60px;
         font-size: 1.2em;
       }
       .search{
-        max-width: 150px;
+        max-width: 100px;
         padding-right: 2px;
       }
       .search input{
         width: 50%;
-        font-size: 10px;
+        height: 10px;
       }
       .search button{
         width: 50%;
-        font-size: 1px;
-        padding: 5px;
+        font-size: 13px;
+        padding: 0px;
+      }
+      .sponsors{
+        font-size: 1em;
+        padding: 15px;
       }
       .container{
-        margin-top: 50px;
+        margin-top: 30px;
       }
       .news{
         display: flex;
+        align-items: center;
         flex-direction: column;
       }
       .news h1{
         padding-bottom: 2px;
       }
       .clubnews{
-        width: 230px;
+        width: 200px;
+        font-size: 0.8em;
       }
       .adults{
-        width: 230px;
+        width: 200px;
+        margin-top: 30px;
+        font-size: 0.8em;
       }
       .results{
         margin: 20px;
         margin-top: 30px;
+        font-size: 0.8em;
       }
       .results h1{
         font-size: 1.2em;
@@ -453,6 +462,7 @@
       .incoming{
         margin: 20px;
         margin-top: 30px;
+        font-size: 0.8em;
       }
       .incoming h1{
         font-size: 1.2em;
@@ -464,6 +474,61 @@
       .row2{
         padding-left: 20px;
         padding-right: 20px;
+      }
+      .footer{
+        font-size: 0.8em;
+        text-align: center;
+        padding-left: 50px;
+        padding-right: 50px;
+        height: 20px;
+      }
+    }
+    @media(max-width:375px){
+      .search{
+        max-width: 60px;
+        padding-right: 2px;
+      }
+      .search input{
+        width: 40%;
+      }
+      .search button{
+        width: 60%;
+        font-size: 13px;
+        padding: 0px;
+      }
+      .sponsors{
+        font-size: 0.8em;
+        padding: 15px;
+      }
+      .icon{
+        margin-left: -80px;
+      }
+    }
+    @media(max-width:320px){
+      .header{
+        height: 30px;      
+      }
+      .logo{
+        width: 0%;
+        overflow: hidden;
+      }
+      .text{
+        font-size: 10px;
+      }
+      .icon{
+        width: 0%;
+        overflow: hidden;
+      }
+      .search{
+        max-width: 100px;
+      }
+      .row1{
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      .row2{
+        padding-left: 5px;
+        padding-right: 5px;
       }
     }
   </style>
